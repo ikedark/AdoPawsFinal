@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Animal" />
+    <item
+        android:checkable="true"
+        android:title="Perro" />
+    <item
+        android:checkable="true"
+        android:title="Gato" />
+    <item android:title="Edad" />
+    <item
+        android:checkable="true"
+        android:title="Cachorro" />
+    <item
+        android:checkable="true"
+        android:title="Adulto" />
+    <item
+        android:checkable="true"
+        android:title="Anciano" />
+    <item android:title="Tamaño" />
+    <item
+        android:checkable="true"
+        android:title="Chico" />
+    <item
+        android:checkable="true"
+        android:title="Mediano" />
+    <item
+        android:checkable="true"
+        android:title="Grande" />
+    <item android:title="Sexo" />
+    <item
+        android:checkable="true"
+        android:title="Hembra" />
+    <item
+        android:checkable="true"
+        android:title="Macho" />
+    <item android:title="Color" />
+    <item
+        android:checkable="true"
+        android:title="Blanco" />
+    <item
+        android:checkable="true"
+        android:title="Negro" />
+    <item
+        android:checkable="true"
+        android:title="Cafe" />
+    <item
+        android:checkable="true"
+        android:title="Amarillo" />
+</menu>
