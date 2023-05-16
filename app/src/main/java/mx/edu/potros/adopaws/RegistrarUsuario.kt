@@ -3,6 +3,7 @@ package mx.edu.potros.adopaws
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
@@ -20,6 +21,13 @@ class RegistrarUsuario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrarUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val btnInicioSesion : Button = findViewById(R.id.btn_iniciarSesión)
+
+        btnInicioSesion.setOnClickListener {
+            val intent: Intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
 
         eDate  = findViewById(R.id.et_Date)
         eDate.setOnClickListener { showDatePickerDialog() }

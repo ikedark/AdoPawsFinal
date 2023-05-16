@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/crema"
-    tools:context=".reportePerdido">
+    tools:context=".reporteEncontrado">
 
     <!--LinearLayout que contiene:-->
     <!--ImageButton Regresar (Buscar Mascota)-->

@@ -7,24 +7,37 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 
 class Encontrar_Mascota : AppCompatActivity() {
+    private lateinit var myRef : DatabaseReference
+    private lateinit var mascotasRecyclerView : RecyclerView
+    private lateinit var mascotasArrayList : ArrayList<mascotaR>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encontrar_mascota)
 
+        mascotasRecyclerView = findViewById(R.id.listaMascotas)
+        mascotasRecyclerView.layoutManager = LinearLayoutManager(this)
+        mascotasRecyclerView.setHasFixedSize(true)
+
+        mascotasArrayList = arrayListOf<mascotaR>()
+        getUserData()
+
         val buttonPerdidos: Button = findViewById(R.id.btn_perdidos)
-        val emergenteGato: ImageView = findViewById(R.id.iv_mascotaGato)
+        //val emergenteGato: ImageView = findViewById(R.id.iv_mascotaGato)
 
         buttonPerdidos.setOnClickListener(){
             var intent: Intent = Intent(this,Buscar_Mascota::class.java)
             startActivity(intent)
         }
 
-        emergenteGato.setOnClickListener(){
-            var intent: Intent = Intent(this,Emergente_Gato::class.java)
-            startActivity(intent)
-        }
+        //emergenteGato.setOnClickListener(){
+           // var intent: Intent = Intent(this,Emergente_Gato::class.java)
+          //  startActivity(intent)
+        //}
 
         val btnAyuda: ImageButton = findViewById(R.id.btn_ayuda)
 
@@ -88,5 +101,30 @@ class Encontrar_Mascota : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btnMapa.setOnClickListener {
+            val intent: Intent = Intent(this, MapaPrueba::class.java)
+            startActivity(intent)
+        }
+
+    }
+
+    private fun getUserData() {
+        myRef = FirebaseDatabase.getInstance().getReference("mascotaPerdida")
+        myRef.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    for (mascotasSnapshot in snapshot.children){
+                        val mascota = mascotasSnapshot.getValue(mascotaR::class.java)
+                        mascotasArrayList.add(mascota!!)
+                    }
+                    mascotasRecyclerView.adapter = mascotasAdapter(mascotasArrayList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 }
