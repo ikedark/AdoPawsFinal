@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".perfilUsuario">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:background="@color/salmon">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:layout_marginLeft="80dp"
+                android:text="Solo tu puedes ver tu perfil"/>
+
+            <ImageButton
+                android:id="@+id/btn_Config"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/configuraciones"
+                android:scaleType="fitXY"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="35dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_perfil"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/jolee"/>
+
+        <TextView
+            android:id="@+id/tv_nombre_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jo Lee"
+            android:fontFamily="@font/nexa"
+            android:textSize="25sp"
+            android:textColor="@color/white_smoak"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <GridLayout
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:paddingHorizontal="30dp">
+
+        <Button
+            android:id="@+id/btn_mascota_interes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mascotas_interes"
+            android:textColor="@color/brick"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/btn_mascota_adopcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mascotas_adopcion"
+            android:textColor="@color/brick"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="362dp"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp">
+
+        <GridView
+            android:id="@+id/gvPerfilUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="1"/>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="5"
+        android:layout_gravity="center"
+        android:background="@color/orange"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/casa"
+            android:background="@drawable/round_butonlogin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:id="@+id/btn_map"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ubicacion"
+            android:background="@drawable/round_butonlogin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:id="@+id/btn_warnings"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/aviso"
+            android:background="@drawable/round_butonlogin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:id="@+id/btn_messages"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/charla"
+            android:background="@drawable/round_butonlogin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <ImageButton
+            android:id="@+id/btn_profile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/perfil"
+            android:background="@drawable/round_butonlogin"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginRight="10dp"
+            />
+    </GridLayout>
+
+</LinearLayout>
