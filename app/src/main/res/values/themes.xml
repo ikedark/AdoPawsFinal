@@ -22,8 +22,5 @@
     <style name="Theme.AdoPaws.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AdoPaws.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="datePickerTheme" parent="android:Theme.Material.Light.Dialog">
-        <item name="android:colorAccent">#8D2730</item>
-    </style>
+    
 </resources>
