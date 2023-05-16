@@ -103,6 +103,16 @@ class MapaPrueba : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonCl
             startActivity(intent)
         }
 
+        btnMapa.setOnClickListener {
+            val intent: Intent = Intent(this, MapaPrueba::class.java)
+            startActivity(intent)
+        }
+
+        btnMensajes.setOnClickListener {
+            val intent: Intent = Intent(this, conversaciones::class.java)
+            startActivity(intent)
+        }
+
     }
 
 //    private fun createPolylines() {

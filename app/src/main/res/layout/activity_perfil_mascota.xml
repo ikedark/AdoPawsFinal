@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white_smoak"
     tools:context=".Perfil_Mascota">
 
     <LinearLayout
@@ -163,7 +164,7 @@
                     android:layout_marginRight="@dimen/perfilMascota_buttons_margin"
                     android:layout_gravity="fill_horizontal"
                     android:layout_columnWeight="1"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:layout_marginTop="@dimen/perfilMascota_buttons_margin"/>
 
             </GridLayout>

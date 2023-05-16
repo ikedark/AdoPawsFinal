@@ -94,7 +94,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="362dp"
+        android:layout_height="252dp"
         android:background="@color/white"
         android:paddingHorizontal="10dp">
 
