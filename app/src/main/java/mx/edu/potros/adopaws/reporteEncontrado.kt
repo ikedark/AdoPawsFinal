@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -19,6 +20,7 @@ import mx.edu.potros.adopaws.databinding.ActivityReportePerdidoBinding
 class reporteEncontrado : AppCompatActivity() {
     private val mascotaRef = FirebaseDatabase.getInstance().getReference("mascotaEncontrada")
     val storage = Firebase.database
+    private lateinit var databaseReference: DatabaseReference
     private var imagen : String = ""
     private val File = 1
     lateinit var binding: ActivityReportePerdidoBinding
@@ -74,7 +76,7 @@ class reporteEncontrado : AppCompatActivity() {
 
         }
 
-        btnReportar.setOnClickListener {
+        binding.btnReportar.setOnClickListener {
             savePetData()
             uploadImagen()
             //val intent: Intent = Intent(this, Mascotas_EP::class.java)
@@ -88,15 +90,18 @@ class reporteEncontrado : AppCompatActivity() {
         val telefonoDuenio = et_cel.text.toString()
         imagen = ImageUri.toString()
 
+
+
         if (descripcionMascota.isNullOrEmpty() || lugarExtravio.isNullOrEmpty() || telefonoDuenio.length > 10
             || telefonoDuenio.isNullOrEmpty() || fechaExtravio.isNullOrEmpty()){
             Toast.makeText(this, "Por favor llene los campos corectamente", Toast.LENGTH_LONG).show()
         }
         else{
+            databaseReference = FirebaseDatabase.getInstance().getReference("mascotaPerdida")
             val mascota : mascotaR = mascotaR(mascotaId, null, descripcionMascota, fechaExtravio, telefonoDuenio, lugarExtravio, null, sexoPet)
 
-            mascotaRef.child(mascotaId).setValue(mascota)
-                .addOnCompleteListener {
+            databaseReference.child(mascotaId).setValue(mascota)
+                .addOnSuccessListener {
                     val builder = AlertDialog.Builder(this@reporteEncontrado)
 
                     val view = layoutInflater.inflate(R.layout.reporte_creado, null)
