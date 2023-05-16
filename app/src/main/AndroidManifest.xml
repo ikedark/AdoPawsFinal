@@ -16,13 +16,19 @@
         android:theme="@style/Theme.AdoPaws"
         tools:targetApi="31">
         <activity
+            android:name=".reporteEncontrado"
+            android:exported="false" />
+        <activity
+            android:name=".reportePerdido"
+            android:exported="false" />
+        <activity
             android:name=".Emergente_Gato"
             android:exported="false"
-            android:theme="@style/Theme.AdoPaws.Neron"/>
+            android:theme="@style/Theme.AdoPaws.Neron" />
         <activity
             android:name=".Emergente_Espanto"
             android:exported="false"
-            android:theme="@style/Theme.AdoPaws.Neron"/>
+            android:theme="@style/Theme.AdoPaws.Neron" />
         <activity
             android:name=".configuracionGeneral"
             android:exported="false" />
@@ -72,8 +78,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
-
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

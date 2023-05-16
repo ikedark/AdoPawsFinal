@@ -92,4 +92,10 @@
     <string name="conversaciones">Conversaciones</string>
     <string name="comunidades">Comunidades</string>
     <string name="privados">Privados</string>
+
+    <string-array name="sexoOpciones">
+        <item>Seleccione el sexo de su mascota</item>
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
 </resources>
