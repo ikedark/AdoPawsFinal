@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526704829273",
+    "project_id": "adopaws-20a7c",
+    "storage_bucket": "adopaws-20a7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526704829273:android:3356c305d456a608656248",
+        "android_client_info": {
+          "package_name": "mx.edu.potros.adopaws"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526704829273-t1vfd3l94gk57rt4l23rrm81hc20qvjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb6pH7CVoFu0VbyUjL96P3QbW1kV2wWsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526704829273-t1vfd3l94gk57rt4l23rrm81hc20qvjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
