@@ -44,14 +44,10 @@ class Home : AppCompatActivity() {
         }
 
         btnAvisos.setOnClickListener {
-            val intent: Intent = Intent( this, Buscar_Mascota::class.java)
+            val intent: Intent = Intent( this, Encontrar_Mascota::class.java)
             startActivity(intent)
         }
 
-//        btnMensajes.setOnClickListener {
-//            val intent: Intent = Intent(this, Mensajes::class.java)
-//            startActivity(intent)
-//        }
         btnMensajes.setOnClickListener {
             val intent: Intent = Intent(this, conversaciones::class.java)
             startActivity(intent)

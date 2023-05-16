@@ -20,11 +20,12 @@
     <EditText
         android:id="@+id/et_usuario_login"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:hint="@string/usuario"
+        android:textColorHint="@color/black"
         android:inputType="text"
         android:background="@drawable/round_text"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:paddingHorizontal="@dimen/input_margin"
@@ -34,11 +35,12 @@
     <EditText
         android:id="@+id/et_password_login"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:hint="@string/contraseña"
+        android:textColorHint="@color/black"
         android:background="@drawable/round_text"
         android:inputType="textPassword"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:paddingHorizontal="@dimen/input_margin"
@@ -64,6 +66,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
         <!--TextView que pregunta si estas registrado-->
         <TextView
@@ -74,7 +78,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="105dp"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
         <!--Boton Registrate que te redirige al layout register-->
         <Button
@@ -83,7 +87,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:text="@string/regist"
-            android:textSize="10sp"
+            android:textSize="14sp"
             android:layout_marginTop="15dp"
             android:textColor="@color/black"
             android:textAppearance="?android:attr/textAppearanceSmall"/>

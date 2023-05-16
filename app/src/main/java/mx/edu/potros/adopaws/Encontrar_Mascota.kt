@@ -1,5 +1,6 @@
 package mx.edu.potros.adopaws
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ class Encontrar_Mascota : AppCompatActivity() {
     private lateinit var myRef : DatabaseReference
     private lateinit var mascotasRecyclerView : RecyclerView
     private lateinit var mascotasArrayList : ArrayList<mascotaR>
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_encontrar_mascota)
@@ -28,11 +30,12 @@ class Encontrar_Mascota : AppCompatActivity() {
 
         val buttonPerdidos: Button = findViewById(R.id.btn_perdidos)
         //val emergenteGato: ImageView = findViewById(R.id.iv_mascotaGato)
-
+        //val btnReg : ImageButton = findViewById(R.id.btn_Regresar2)
         buttonPerdidos.setOnClickListener(){
             var intent: Intent = Intent(this,Buscar_Mascota::class.java)
             startActivity(intent)
         }
+
 
         //emergenteGato.setOnClickListener(){
            // var intent: Intent = Intent(this,Emergente_Gato::class.java)
