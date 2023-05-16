@@ -40,7 +40,7 @@ class RegistrarUsuario : AppCompatActivity() {
 
 
 
-            databaseReference = FirebaseDatabase.getInstance().getReference("usuarios")
+            databaseReference = FirebaseDatabase.getInstance().getReference("/usuarios")
             val users = Usuarios(nomusuario, fechanac, correo, contrasenia)
             databaseReference.child(nomusuario).setValue(users).addOnSuccessListener {
                 binding.etUsuario.text.clear()

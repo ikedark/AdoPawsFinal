@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import mx.edu.potros.adopaws.databinding.ActivityReportePerdidoBinding
+import mx.edu.potros.adopaws.databinding.ActivityReporteEncontradoBinding
 
 class reporteEncontrado : AppCompatActivity() {
     private val mascotaRef = FirebaseDatabase.getInstance().getReference("mascotaEncontrada")
@@ -23,7 +23,7 @@ class reporteEncontrado : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
     private var imagen : String = ""
     private val File = 1
-    lateinit var binding: ActivityReportePerdidoBinding
+    lateinit var binding: ActivityReporteEncontradoBinding
     lateinit var ImageUri: Uri
     lateinit var img_btn_upload: ImageView
     lateinit var et_Desc : EditText
@@ -37,7 +37,7 @@ class reporteEncontrado : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityReportePerdidoBinding.inflate(layoutInflater)
+        binding = ActivityReporteEncontradoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         et_Desc  = findViewById(R.id.descP)
@@ -78,7 +78,7 @@ class reporteEncontrado : AppCompatActivity() {
 
         binding.btnReportar.setOnClickListener {
             savePetData()
-            uploadImagen()
+            //uploadImagen()
             //val intent: Intent = Intent(this, Mascotas_EP::class.java)
         }
     }
@@ -97,7 +97,7 @@ class reporteEncontrado : AppCompatActivity() {
             Toast.makeText(this, "Por favor llene los campos corectamente", Toast.LENGTH_LONG).show()
         }
         else{
-            databaseReference = FirebaseDatabase.getInstance().getReference("mascotaPerdida")
+            databaseReference = FirebaseDatabase.getInstance().getReference("mascotaEncontrada")
             val mascota : mascotaR = mascotaR(mascotaId, null, descripcionMascota, fechaExtravio, telefonoDuenio, lugarExtravio, null, sexoPet)
 
             databaseReference.child(mascotaId).setValue(mascota)

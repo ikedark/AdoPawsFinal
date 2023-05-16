@@ -12,6 +12,7 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs.CastExtraArgs
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -23,6 +24,7 @@ import java.io.File
 class reportePerdido : AppCompatActivity() {
     private val mascotaRef = FirebaseDatabase.getInstance().getReference("mascotaPerdida")
     val storage = Firebase.database
+    private lateinit var databaseReference: DatabaseReference
     private var imagen : String = ""
     private val File = 1
     lateinit var binding: ActivityReportePerdidoBinding
@@ -82,7 +84,7 @@ class reportePerdido : AppCompatActivity() {
 
         btnReportar.setOnClickListener {
             savePetData()
-            uploadImagen()
+            //uploadImagen()
             //val intent: Intent = Intent(this, Mascotas_EP::class.java)
         }
     }
@@ -100,9 +102,10 @@ class reportePerdido : AppCompatActivity() {
             Toast.makeText(this, "Por favor llene los campos corectamente", Toast.LENGTH_LONG).show()
         }
         else{
+            databaseReference = FirebaseDatabase.getInstance().getReference("/mascotaPerdida")
             val mascota : mascotaR = mascotaR(mascotaId, nombreMascota, descripcionMascota, fechaExtravio, telefonoDuenio, lugarExtravio, null, sexoPet)
 
-            mascotaRef.child(mascotaId).setValue(mascota)
+            databaseReference.child(nombreMascota).setValue(mascota)
                 .addOnCompleteListener {
                     val builder = AlertDialog.Builder(this@reportePerdido)
 
